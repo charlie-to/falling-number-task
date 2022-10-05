@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LoginScene.unity
+    guid: 323f5b4b1408a448a9f4de00dfe29ef2
+  - enabled: 1
+    path: Assets/Scenes/TaskChoiceScene.unity
+    guid: c7f6e6c27dd9a4e64af2fc7252eefefc
+  - enabled: 1
+    path: Assets/Scenes/TaskScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ErrorDialogScene.unity
+    guid: 9b7629d42f7984236bc89483943ec6a3
+  m_configObjects: {}
