@@ -1,0 +1,15 @@
+# Test Senario Ver.0.1
+# 
+
+[meta]
+name = "test_senario"
+
+[[Senarios]]
+senario_num = 1.0
+type = "train"
+SpawnDelayTime = 4.0
+
+[[Senarios]]
+senario_num = 2.0
+type = "train"
+SpawnDelayTime = 5.0

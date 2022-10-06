@@ -18,11 +18,15 @@ public class NumberTimer : MonoBehaviour
 
     private NumberSpawnDelayUpdate numberSpawnDelayUpdate;
 
+    private LoadSenario loadSenario = new LoadSenario();
+
     private void Start()
     {
         // time freeze at beginning
         TimeFreeze();
         numberSpawnDelayUpdate = new NumberSpawnDelayUpdate(timer);
+        loadSenario.Load();
+        Debug.Log("delaytime of toml :" + loadSenario.GetSpawnDelayTime());
     }
 
     private void Update()
