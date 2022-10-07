@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -51,13 +52,19 @@ public class NumberManager : MonoBehaviour
         // Numberが未登録ならゲーム続行
         if (numbers.Count == 0) return;
 
-        Number number = numbers[0];
-
         // numberのy座標が範囲外ならゲームオーバー
-        if (number.display.transform.position.y <= -6f)
+        if (numbers[0].display.transform.position.y <= -6f)
         {
             //game over 処理
             taskManeger.Gameover();
+            numbers.Clear();
+        }
+
+        // SpawnDelayTimeが大きい値ならゲームオーバー
+        if(TaskManegerInTask.NumberSpawnDelayTime < 0)
+        {
+            taskManeger.Gameover();
+            numbers.Clear();
         }
      
     }

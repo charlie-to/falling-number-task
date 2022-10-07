@@ -19,19 +19,6 @@ public class InternalTimer :  MonoBehaviour, IInternalTimer
 
     public bool IsRunning { get { return running; } }
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void Start()
     {
         running = false;

@@ -1,3 +1,4 @@
+using Assets.Scripts.LoadSenarios;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,26 +16,27 @@ public class NumberTimer : MonoBehaviour
     public PauseDisplay pauseDisplay;
     public TaskManegerInTask taskManeger;
     public InternalTimer timer;
+    // private NumberSpawnDelayUpdate numberSpawnDelayUpdate;
 
-    private NumberSpawnDelayUpdate numberSpawnDelayUpdate;
-
-    private LoadSenario loadSenario = new LoadSenario();
+    private SenarioTomlRepo senarioRepo;
+    private Senario senario;
 
     private void Start()
     {
         // time freeze at beginning
         TimeFreeze();
-        numberSpawnDelayUpdate = new NumberSpawnDelayUpdate(timer);
-        loadSenario.Load();
-        Debug.Log("delaytime of toml :" + loadSenario.GetSpawnDelayTime());
+        // numberSpawnDelayUpdate = new NumberSpawnDelayUpdate(timer);
+        senarioRepo = new SenarioTomlRepo();
+        senario = senarioRepo.GetSenario(TaskManegerInTask.SenarioNumber);
+        TaskManager.NumberSpawnDelayTime = senario.NumberSpawnDelayTimeInstractions[0].NumberSpawnDelayTime;
     }
 
     private void Update()
     {
-        numberSpawnDelayUpdate.Update();
+        // numberSpawnDelayUpdate.Update();
+        TaskManegerInTask.NumberSpawnDelayTime += senario.GetSpawnDelayTimeDeltaByTime( timer.GetElapsedTime() );
+        numberManager.GameOverCheck(); 
         NumberSpawn();
-        numberManager.GameOverCheck();
-        Debug.Log("Delay:"+TaskManegerInTask.NumberSpawnDelayTime);
     }
 
     // 
