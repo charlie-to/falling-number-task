@@ -6,11 +6,10 @@ using System.IO;
 using Unity.VisualScripting;
 using System;
 using Assets.Scripts.LoadSenarios;
-using NPOI.SS.Formula.Functions;
 
 public class SenarioTomlRepo
 {
-    public string file_name;
+    public string file_path = string.Format("{0}/Senario.toml", Directory.GetCurrentDirectory());
 
     private TomlTableArray senarios;
     private TomlTable meta;
@@ -26,19 +25,15 @@ public class SenarioTomlRepo
 
     public void Load()
     {
-        // read input file
-        //string input_file_path = Directory.GetCurrentDirectory() + directry_name + file_name;
-        var toml_file = string.Format("{0}/../Senario.toml", Application.dataPath);
-
         try
         {
-            TomlTable root = Toml.ReadFile(toml_file);
+            TomlTable root = Toml.ReadFile(file_path);
             meta = root.Get<TomlTable>("meta");
             senarios = root.Get<TomlTableArray>("Senarios");
         }
         catch
         {
-            throw new ArgumentException("toml file is not found!");
+            return;
         }
 
         string name = meta.Get<string>("name");
@@ -77,5 +72,10 @@ public class SenarioTomlRepo
         Senario senario = new Senario(name, type , fallingSpeed, numberSpawnDelayTimeInstractions);
 
         return senario;
+    }
+
+    public int GetSenarioLength()
+    {
+        return senarios.Count;
     }
 }
