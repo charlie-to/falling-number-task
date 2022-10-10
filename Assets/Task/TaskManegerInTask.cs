@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class TaskManegerInTask : TaskManager
 {
-    private string ResultSaveDirectory = "TaskResultData";
+    private string ResultSaveDirectory = $"TaskResultData\\{TaskManager.SubjectNum}";
     [SerializeField]
     private TaskData taskData;
 
@@ -43,6 +43,8 @@ public class TaskManegerInTask : TaskManager
     {
         taskData.AddTaskEvent(_eventType, Position);
     }
+
+
 
     // ゲームオーバー処理
     public void Gameover()

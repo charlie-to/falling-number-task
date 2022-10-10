@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-    public static string SubjectNum;
-    public static float FallingSpeed;
-    public static float NumberSpawnDelayTime;
+    public static string SubjectNum = "0000";
+    public static float FallingSpeed = 1f;
+    public static float NumberSpawnDelayTime = -1f;
     public static int SenarioNumber = 0;
 }

@@ -7,17 +7,16 @@ using TMPro;
 public class LoginBottunAction : MonoBehaviour
 {
     public TMP_InputField subjectNumberField;
-    public TMP_InputField checkNumberField;
     public TextMeshProUGUI wrongInputWorning;
+
+    private CheckDigit CheckDigit = new CheckDigit();
 
     public void OnClick()
     {
         subjectNumberField = subjectNumberField.GetComponent<TMP_InputField>();
-        checkNumberField = checkNumberField.GetComponent<TMP_InputField>();
 
-        if(subjectNumberField.text == "1234" && checkNumberField.text == "1234")
+        if( CheckDigit.IsCorrectCheckDigit( subjectNumberField.text ) )
         {
-            Debug.Log("checked");
             ChangeSceneToTask();
         }
         else
