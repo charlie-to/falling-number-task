@@ -14,24 +14,7 @@ public class TaskManegerInTask : TaskManager
 
     private void Start()
     {
-        PropatyInitiate();
-        //Debug.Log("this is when start of tm");
-        //Debug.Log("subject Num : " + TaskManegerInTask.SubjectNum);
-        //Debug.Log("falling speed:" + TaskManegerInTask.FallingSpeed);
-        taskData = new TaskData(SubjectNum, FallingSpeed, NumberSpawnDelayTime);
-    }
-
-    // Falling speed が初期値の場合は１を代入
-    private void PropatyInitiate() { 
-        if(FallingSpeed == 0)
-        {
-            FallingSpeed = 0.7f;
-        }
-        if (SubjectNum == null)
-        {
-            SubjectNum = "0000";
-        }
-        if (NumberSpawnDelayTime == 0) NumberSpawnDelayTime = 3.0f;
+        taskData = new TaskData(TaskManager.SubjectNum, TaskManager.FallingSpeed, TaskManager.NumberSpawnDelayTime);
     }
 
     // タスクイベント

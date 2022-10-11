@@ -33,7 +33,7 @@ public class TaskLogEvent
         ID = _ID;
         eventType = _eventType;
         eventTypeString = _eventType.ToString();
-        EventAt = DateTime.Now.ToString("u");
+        EventAt = DateTime.Now.ToString("O");
     }
 
     public void AddDestroyPoint(float _position)

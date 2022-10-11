@@ -29,6 +29,7 @@ public class NumberTimer : MonoBehaviour
         senarioRepo = new SenarioTomlRepo();
         senario = senarioRepo.GetSenario(TaskManegerInTask.SenarioNumber);
         TaskManager.NumberSpawnDelayTime = senario.NumberSpawnDelayTimeInstractions[0].NumberSpawnDelayTime;
+        TaskManager.FallingSpeed = senario.FallingSpeed;
     }
 
     private void Update()
