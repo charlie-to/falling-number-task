@@ -2,32 +2,48 @@
 # 
 
 [meta]
-name = "test_senario"
+name = "test_senario1"
 falling_speed = 0.3
 
 [[Senarios]]
 senario_name = "Trainning1"
 type = "train"
+digits = 4
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
+spawn_delay_time = 10.0
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
-change_at = 5.0
+spawn_delay_time = 6.0
+change_at = 60.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 2.0
-change_at = 10.0
-
+spawn_delay_time = 6.0
+change_at = 240.0
 
 [[Senarios]]
 senario_name = "Trainning2"
 type = "train"
-[[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
-change_at = 0.0
+digits = 4
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 10.0
-change_at = 5.0
+change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 8.0
-change_at = 10.0
+spawn_delay_time = 4.0
+change_at = 60.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 4.0
+change_at = 240.0
+
+
+[[Senarios]]
+senario_name = "Trainning3"
+type = "train"
+digits = 4
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 10.0
+change_at = 0.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 4.0
+change_at = 120.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 1.0
+change_at = 240.0

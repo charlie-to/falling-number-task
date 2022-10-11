@@ -47,7 +47,7 @@ public class LoadSenarioTest
         SenarioTomlRepo senarioTomlRepo = new SenarioTomlRepo();
         Senario senario = senarioTomlRepo.GetSenario(0);
 
-        float delta = senario.GetSpawnDelayTimeDeltaByTime(1000000f);
+        float delta = senario.GetSpawnDelayTimeByTime(1000000f);
         Assert.That(delta == -1000f);
     }
 }

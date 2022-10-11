@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts.LoadSenarios
 {
@@ -11,14 +14,16 @@ namespace Assets.Scripts.LoadSenarios
         public string Name { get; }
         public SenarioType Type { get; }
         public float FallingSpeed { get; }
+        public int digits { get; }
         public List<NumberSpawnDelayTimeInstraction> NumberSpawnDelayTimeInstractions { get; }
 
-        public Senario(string _name,SenarioType _type, float _FallingSpeed, List<NumberSpawnDelayTimeInstraction> _numberSpawnDelayTimeInstractions)
+        public Senario(string _name,SenarioType _type, float _FallingSpeed, List<NumberSpawnDelayTimeInstraction> _numberSpawnDelayTimeInstractions, int _digits)
         {
             this.Name = _name;
             this.Type = _type;
             this.FallingSpeed = _FallingSpeed;
             this.NumberSpawnDelayTimeInstractions = _numberSpawnDelayTimeInstractions;
+            this.digits = _digits;
         }
 
         /// <summary>
@@ -27,18 +32,25 @@ namespace Assets.Scripts.LoadSenarios
         /// </summary>
         /// <param name="elapsedTime">現在の経過時間</param>
         /// <returns>時間の変化量</returns>
-        public float GetSpawnDelayTimeDeltaByTime(float elapsedTime)
+        public float GetSpawnDelayTimeByTime(float elapsedTime)
         {
-            if (elapsedTime == 0) return NumberSpawnDelayTimeInstractions[0].NumberSpawnDelayTime / NumberSpawnDelayTimeInstractions[1].ChangeAt;
-            
+            if (elapsedTime == 0f)
+            {
+                return NumberSpawnDelayTimeInstractions[0].NumberSpawnDelayTime;
+            }
+
             NumberSpawnDelayTimeInstraction currentInstrantion = NumberSpawnDelayTimeInstractions.FindLast(i => i.ChangeAt < elapsedTime);
+            
 
             if (NumberSpawnDelayTimeInstractions.IndexOf(currentInstrantion) + 1 == NumberSpawnDelayTimeInstractions.Count) return -1000f;
 
+
             NumberSpawnDelayTimeInstraction nextInstraction = NumberSpawnDelayTimeInstractions[ NumberSpawnDelayTimeInstractions.IndexOf(currentInstrantion) +1];
+           
+            float dt = nextInstraction.ChangeAt - currentInstrantion.ChangeAt;
+            float ds = nextInstraction.NumberSpawnDelayTime - currentInstrantion.NumberSpawnDelayTime;
             
-            float delta = (nextInstraction.NumberSpawnDelayTime - currentInstrantion.NumberSpawnDelayTime) / (nextInstraction.ChangeAt - currentInstrantion.ChangeAt);
-            return delta;
+            return currentInstrantion.NumberSpawnDelayTime + ds*(elapsedTime - currentInstrantion.ChangeAt)/dt;
         }
 
 

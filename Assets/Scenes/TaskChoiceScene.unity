@@ -405,7 +405,6 @@ GameObject:
   - component: {fileID: 301423613}
   - component: {fileID: 301423612}
   - component: {fileID: 301423611}
-  - component: {fileID: 301423614}
   m_Layer: 5
   m_Name: DebugerButton
   m_TagString: Untagged
@@ -478,9 +477,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 301423614}
-        m_TargetAssemblyTypeName: DebugBotton, Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 818935233}
+        m_TargetAssemblyTypeName: TaskStartBotunAction, Assembly-CSharp
+        m_MethodName: OnClickReload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -489,7 +488,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &301423612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,19 +527,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301423609}
   m_CullTransparentMesh: 1
---- !u!114 &301423614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301423609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f208393397816c84580fd0a6969c2d1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  worningText: {fileID: 1196039339}
 --- !u!1 &330473505
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,8 +594,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2144,10 +2130,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u51FA\u73FE\u9593\u9694\u3092\u5165\u529B"
+  m_text: Enter Task Number
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1d797d660f2a24d7687e413b55d01d8a, type: 2}
-  m_sharedMaterial: {fileID: 472210550606889762, guid: 1d797d660f2a24d7687e413b55d01d8a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -1,6 +1,7 @@
 using Assets.Scripts.LoadSenarios;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -8,7 +9,6 @@ public class NumberTimer : MonoBehaviour
 {
     public float numDelay;
     private float nextNumTime = 0f;
-    private int digits = 3;
 
     public NumberManager numberManager;
     public NumDespawner numDespawner;
@@ -34,7 +34,11 @@ public class NumberTimer : MonoBehaviour
     private void Update()
     {
         // numberSpawnDelayUpdate.Update();
-        TaskManegerInTask.NumberSpawnDelayTime += senario.GetSpawnDelayTimeDeltaByTime( timer.GetElapsedTime() );
+        if(Time.timeScale == 1)
+        {
+            TaskManegerInTask.NumberSpawnDelayTime = senario.GetSpawnDelayTimeByTime( timer.GetElapsedTime() );
+        }
+        Debug.Log(TaskManager.NumberSpawnDelayTime);
         numberManager.GameOverCheck(); 
         NumberSpawn();
     }
@@ -44,7 +48,7 @@ public class NumberTimer : MonoBehaviour
     {
         if (Time.time >= nextNumTime)
          {
-            numberManager.AddNumber( numGenerator.generateString(digits) );
+            numberManager.AddNumber( numGenerator.generateString(senario.digits) );
             nextNumTime = Time.time + TaskManegerInTask.NumberSpawnDelayTime;
         }
     }

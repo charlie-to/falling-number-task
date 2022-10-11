@@ -9,7 +9,7 @@ using Assets.Scripts.LoadSenarios;
 
 public class SenarioTomlRepo
 {
-    public string file_path = string.Format("{0}/Senario.toml", Directory.GetCurrentDirectory());
+    public string file_path = string.Format("{0}\\Senario.toml", Directory.GetCurrentDirectory());
 
     private TomlTableArray senarios;
     private TomlTable meta;
@@ -59,6 +59,7 @@ public class SenarioTomlRepo
         string name = senarioTable.Get<string>("senario_name");
         SenarioType type = senarioTable.Get<string>("type") == "trainning" ? SenarioType.Training : SenarioType.task;
         float fallingSpeed = GetFallingSpeed();
+        int digits = senarioTable.Get<int>("digits");
 
         // add instrantions
         List<NumberSpawnDelayTimeInstraction> numberSpawnDelayTimeInstractions = new List<NumberSpawnDelayTimeInstraction>();
@@ -69,7 +70,7 @@ public class SenarioTomlRepo
             numberSpawnDelayTimeInstractions.Add(instraction);
         }
 
-        Senario senario = new Senario(name, type , fallingSpeed, numberSpawnDelayTimeInstractions);
+        Senario senario = new Senario(name, type , fallingSpeed, numberSpawnDelayTimeInstractions, digits);
 
         return senario;
     }

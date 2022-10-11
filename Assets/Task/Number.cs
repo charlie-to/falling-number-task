@@ -19,9 +19,16 @@ public class Number
         display.SetNum(number);
     }
 
-    public char GetNextLetter()
+    public char? GetNextLetter()
     {
-        return number[typeIndex];
+        try
+        {
+            return number[typeIndex];
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     public void TypeLetter()

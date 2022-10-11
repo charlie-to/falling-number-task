@@ -11,9 +11,6 @@ interface IInternalTimer
 }
 public class InternalTimer :  MonoBehaviour, IInternalTimer
 {
-
-    public static InternalTimer instance;
-
     private float elapsedTime;
     private bool running;
 
@@ -27,8 +24,7 @@ public class InternalTimer :  MonoBehaviour, IInternalTimer
     private void Update()
     {
         if (Time.timeScale == 0) return;
-        
-        elapsedTime += Time.deltaTime;
+        if (Time.timeScale == 1) elapsedTime += Time.deltaTime;
     }
     public void StartTimer()
     {

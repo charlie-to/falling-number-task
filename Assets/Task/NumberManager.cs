@@ -25,6 +25,8 @@ public class NumberManager : MonoBehaviour
 
     public void TypeLetter(char letter)
     {
+        if(activeNum == null) { return; }
+
         // Check if letter was next
         // remive it from nember
         if(activeNum.GetNextLetter() == letter)
@@ -60,7 +62,7 @@ public class NumberManager : MonoBehaviour
             numbers.Clear();
         }
 
-        // SpawnDelayTimeが大きい値ならゲームオーバー
+        // SpawnDelayTimeが負の大きい値ならゲームオーバー
         if(TaskManegerInTask.NumberSpawnDelayTime < 0)
         {
             taskManeger.Gameover();
@@ -70,8 +72,12 @@ public class NumberManager : MonoBehaviour
     }
     public void SetActiveNum()
     {
-        // numbers に数字なければ何もしない
-        if(numbers.Count == 0) return;
+        // numbers に数字なければactiviNumはnull
+        if (numbers.Count == 0)
+        {
+            activeNum = null;
+            return;
+        }
 
         activeNum = numbers[0];
         activeNum.display.SetActive();

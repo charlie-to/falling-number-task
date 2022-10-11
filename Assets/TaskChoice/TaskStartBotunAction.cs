@@ -12,23 +12,27 @@ public class TaskStartBotunAction : MonoBehaviour
     public TextMeshProUGUI fallingSpeedWrongWorning;
     public TextMeshProUGUI senarioLoadStatusField;
 
+    [Serialize]
     private SenarioTomlRepo senarioTomlRepo;
     private int senarioNumber;
 
     public void Start()
     {
+        LoadSenarios();
+        StartCoroutine(TextSetNull());
+    }
+
+    public void LoadSenarios()
+    {
         senarioTomlRepo = new SenarioTomlRepo();
         try
-        {
+         {
             senarioLoadStatusField.text = $" {senarioTomlRepo.GetSenarioLength().ToString()} Senarios Loaded ";
-        }
-        catch
-        {
+         }
+         catch
+         {
             senarioLoadStatusField.text = "Senario data is missing.";
-        }
-        
-
-        StartCoroutine(TextSetNull());
+         }
     }
 
     public void OnClick()
@@ -52,13 +56,18 @@ public class TaskStartBotunAction : MonoBehaviour
             return;
         }
 
-        if( senarioNumber <= 0 || senarioTomlRepo.GetSenarioLength() < senarioNumber)
+        if (senarioNumber <= 0 || senarioTomlRepo.GetSenarioLength() < senarioNumber)
         {
             fallingSpeedWrongWorning.text = "入力した値に対応するシナリオが存在しません";
             return ;
         }  
 
         GameSceneToTask();
+    }
+
+    public void OnClickReload()
+    {
+        LoadSenarios();
     }
 
     // ルーチン
