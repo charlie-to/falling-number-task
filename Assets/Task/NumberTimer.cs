@@ -39,7 +39,7 @@ public class NumberTimer : MonoBehaviour
         {
             TaskManegerInTask.NumberSpawnDelayTime = senario.GetSpawnDelayTimeByTime( timer.GetElapsedTime() );
         }
-        Debug.Log(TaskManager.NumberSpawnDelayTime);
+        //Debug.Log(TaskManager.NumberSpawnDelayTime);
         numberManager.GameOverCheck(); 
         NumberSpawn();
     }
