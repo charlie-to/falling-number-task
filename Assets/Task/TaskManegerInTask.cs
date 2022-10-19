@@ -14,7 +14,7 @@ public class TaskManegerInTask : TaskManager
 
     private void Start()
     {
-        taskData = new TaskData(TaskManager.SubjectNum, TaskManager.FallingSpeed, TaskManager.NumberSpawnDelayTime);
+        taskData = new TaskData(TaskManager.SubjectNum, TaskManager.FallingSpeed, TaskManager.NumberSpawnDelayTime, TaskManager.Life, TaskManager.NumberOfDeleteOnDecLife);
     }
 
     // タスクイベント

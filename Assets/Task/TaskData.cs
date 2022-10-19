@@ -16,13 +16,21 @@ public class TaskData
     private String TaskStartAt;
     [SerializeField]
     private List<TaskLogEvent> taskEvents = new List<TaskLogEvent>();
+    [SerializeField]
+    private int LifeNumber;
+    [SerializeField]
+    private int NumberOfDeleteOnDecreaseLife;
+    
 
-    public TaskData (string _SubjectNumber, float _FallingSpeed, float _NumberSpawnDelayTime)
+    public TaskData (string _SubjectNumber, float _FallingSpeed, float _NumberSpawnDelayTime, int lifeNumber, int numberOfDeleteOnDecreaseLife)
     {
         SubjectNumber = _SubjectNumber;
         FallingSpeed = _FallingSpeed;
         NumberSpawnDelayTime = _NumberSpawnDelayTime;
         TaskStartAt = DateTime.Now.ToString("u");
+        LifeNumber = lifeNumber;
+        NumberOfDeleteOnDecreaseLife = numberOfDeleteOnDecreaseLife;
+        // AreaOfDeleteOnDecreaseLife = areaOfDeleteOnDecreaseLife;
     }
 
     public void AddTaskEvent(EventType _eventType)
