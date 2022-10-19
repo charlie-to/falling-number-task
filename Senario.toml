@@ -11,17 +11,18 @@ type = "train"
 digits = 4
 life = 3
 number_of_delete_on_decrease_life = 3
+range_of_delete_on_decrease_life = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 10.0
+spawn_delay_time = 2.0
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 10.0
+spawn_delay_time = 2.0
 change_at = 30.0
 [[Senarios.spawn_delay_times]] 
-spawn_delay_time = 8.0
+spawn_delay_time = 2.0
 change_at = 90.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 8.0
+spawn_delay_time = 2.0
 change_at = 240.0
 
 [[Senarios]]
@@ -29,15 +30,16 @@ senario_name = "Trainning2"
 type = "train"
 digits = 4
 life = 3
-number_of_delete_on_decrease_life = 3
+number_of_delete_on_decrease_life = 0
+range_of_delete_on_decrease_life = 7.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 10.0
+spawn_delay_time = 1.0
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
+spawn_delay_time = 1.0
 change_at = 90.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
+spawn_delay_time = 1.0
 change_at = 240.0
 
 
@@ -47,6 +49,7 @@ type = "train"
 digits = 4
 life = 3
 number_of_delete_on_decrease_life = 3
+range_of_delete_on_decrease_life = 1.0
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 8.0
 change_at = 0.0
@@ -63,6 +66,7 @@ type = "train"
 digits = 4
 life = 3
 number_of_delete_on_decrease_life = 3
+range_of_delete_on_decrease_life = 1.0
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 8.0
 change_at = 0.0

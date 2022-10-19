@@ -18,10 +18,11 @@ namespace Assets.Scripts.LoadSenarios
 
         public int LifeNumber { get; }
         public int NumberOfDeleteOnDecreaseLife { get; }
+        public float RangeOfDeleteOnDecreaseLife { get; }
 
         public List<NumberSpawnDelayTimeInstraction> NumberSpawnDelayTimeInstractions { get; }
 
-        public Senario(string _name,SenarioType _type, float _FallingSpeed, List<NumberSpawnDelayTimeInstraction> _numberSpawnDelayTimeInstractions, int _digits, int lifeNumber, int numberOfDeleteOnDecreaseLife)
+        public Senario(string _name,SenarioType _type, float _FallingSpeed, List<NumberSpawnDelayTimeInstraction> _numberSpawnDelayTimeInstractions, int _digits, int lifeNumber, int numberOfDeleteOnDecreaseLife, float rangeOfDeleteOnDecreaseLife)
         {
             this.Name = _name;
             this.Type = _type;
@@ -30,6 +31,7 @@ namespace Assets.Scripts.LoadSenarios
             this.digits = _digits;
             LifeNumber = lifeNumber;
             NumberOfDeleteOnDecreaseLife = numberOfDeleteOnDecreaseLife;
+            RangeOfDeleteOnDecreaseLife = rangeOfDeleteOnDecreaseLife;
         }
 
         /// <summary>

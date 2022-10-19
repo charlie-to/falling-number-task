@@ -35,7 +35,7 @@ public class TaskManegerInTask : TaskManager
 
         var filePath = Directory.GetCurrentDirectory() + "\\" + ResultSaveDirectory;
         Debug.Log(filePath);
-        var fileName = SubjectNum + "_" + DateTime.Now.ToString("D")+ "_" + DateTime.Now.ToString("HH")+ "時" + DateTime.Now.ToString("mm") + "分"+ DateTime.Now.ToString("ss")+ "秒" + ".json";
+        var fileName = SubjectNum + "_" + DateTime.Now.ToString("D") + "_" + DateTime.Now.ToString("HH") + "時" + DateTime.Now.ToString("mm") + "分" + DateTime.Now.ToString("ss") + "秒" + ".json";
 
         if (!Directory.Exists(filePath)) Directory.CreateDirectory(filePath);
 
@@ -46,19 +46,20 @@ public class TaskManegerInTask : TaskManager
             //throw new Exception("test");
             //
 
-            using (StreamWriter sw = new StreamWriter(filePath + "\\" + fileName , false))
+            using (StreamWriter sw = new StreamWriter(filePath + "\\" + fileName, false))
             {
                 sw.WriteLine(JsonUtility.ToJson(taskData));
                 sw.Flush();
             }
             Time.timeScale = 1;
             SceneManager.LoadScene("TaskChoiceScene");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             // ファイルを作成できなかったときになにかする
             ErrorDialogMessageHandlerField.ErrorMessageText = "cannnot write json to a file. the json is " + JsonUtility.ToJson(taskData) + e.Message;
             SceneManager.LoadScene("ErrorDialogScene");
         }
-        
+
     }
 }

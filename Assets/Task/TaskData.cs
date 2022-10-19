@@ -22,9 +22,11 @@ public class TaskData
     private int LifeNumber;
     [SerializeField]
     private int NumberOfDeleteOnDecreaseLife;
-    
+    [SerializeField]
+    private float RangeOfDeleteOnDecreaseLife;
 
-    public TaskData (string _name, string _SubjectNumber, float _FallingSpeed, float _NumberSpawnDelayTime, int lifeNumber, int numberOfDeleteOnDecreaseLife)
+
+    public TaskData(string _name, string _SubjectNumber, float _FallingSpeed, float _NumberSpawnDelayTime, int lifeNumber, int numberOfDeleteOnDecreaseLife, float rangeOfDeleteOnDecreaseOnLife)
     {
         this.name = _name;
         SubjectNumber = _SubjectNumber;
@@ -33,7 +35,7 @@ public class TaskData
         TaskStartAt = DateTime.Now.ToString("u");
         LifeNumber = lifeNumber;
         NumberOfDeleteOnDecreaseLife = numberOfDeleteOnDecreaseLife;
-        // AreaOfDeleteOnDecreaseLife = areaOfDeleteOnDecreaseLife;
+        RangeOfDeleteOnDecreaseLife = rangeOfDeleteOnDecreaseOnLife;
     }
 
     public void AddTaskEvent(EventType _eventType)
@@ -42,7 +44,7 @@ public class TaskData
         taskEvents.Add(taskLogEvent);
     }
 
-    public void AddTaskEvent(EventType _eventType,float DestroyPosition)
+    public void AddTaskEvent(EventType _eventType, float DestroyPosition)
     {
         var taskLogEvent = new TaskLogEvent(taskEvents.Count + 1, _eventType);
         taskLogEvent.AddDestroyPoint(DestroyPosition);
