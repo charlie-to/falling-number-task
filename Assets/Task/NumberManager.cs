@@ -54,12 +54,30 @@ public class NumberManager : MonoBehaviour
         // Numberが未登録ならゲーム続行
         if (numbers.Count == 0) return;
 
-        // numberのy座標が範囲外ならゲームオーバー
+        // numberのy座標が範囲外ならライフを減らす
         if (numbers[0].display.transform.position.y <= -6f)
         {
-            //game over 処理
-            taskManeger.Gameover();
-            numbers.Clear();
+            // ライフを減らして指定個数の数字を消す
+            TaskManager.Life--;
+            taskManeger.AddTaskEvent(EventType.DecreaseLife); // Log Event
+            for (int i = 0; i <= TaskManager.NumberOfDeleteOnDecLife; i++)
+            {
+                if (numbers.Count == 0) break;
+                if (numbers[0] != null)
+                {
+                    Number deleteNumber = numbers[0];
+                    numbers.Remove(deleteNumber);
+                    deleteNumber.NumRemove();
+                }
+            }
+
+            // ライフ０ならゲームオーバー
+            if(TaskManager.Life == 0)
+            {
+                 //game over 処理
+                 taskManeger.Gameover();
+                 numbers.Clear();
+            }
         }
 
         // SpawnDelayTimeが負の大きい値ならゲームオーバー
@@ -68,7 +86,6 @@ public class NumberManager : MonoBehaviour
             taskManeger.Gameover();
             numbers.Clear();
         }
-     
     }
     public void SetActiveNum()
     {

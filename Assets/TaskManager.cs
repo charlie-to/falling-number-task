@@ -8,4 +8,6 @@ public class TaskManager : MonoBehaviour
     public static float FallingSpeed = 1f;
     public static float NumberSpawnDelayTime = -1f;
     public static int SenarioNumber = 0;
+    public static int Life = 3;
+    public static int NumberOfDeleteOnDecLife = 3;
 }

@@ -9,6 +9,8 @@ falling_speed = 0.75
 senario_name = "Trainning1"
 type = "train"
 digits = 4
+life = 3
+number_of_delete_on_decrease_life = 3
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 10.0
 change_at = 0.0
@@ -26,6 +28,8 @@ change_at = 240.0
 senario_name = "Trainning2"
 type = "train"
 digits = 4
+life = 3
+number_of_delete_on_decrease_life = 3
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 10.0
 change_at = 0.0
@@ -41,6 +45,8 @@ change_at = 240.0
 senario_name = "GetPerformance_max3"
 type = "train"
 digits = 4
+life = 3
+number_of_delete_on_decrease_life = 3
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 8.0
 change_at = 0.0
@@ -55,6 +61,8 @@ change_at = 300.0
 senario_name = "check4"
 type = "train"
 digits = 4
+life = 3
+number_of_delete_on_decrease_life = 3
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 8.0
 change_at = 0.0

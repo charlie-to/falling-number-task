@@ -15,15 +15,21 @@ namespace Assets.Scripts.LoadSenarios
         public SenarioType Type { get; }
         public float FallingSpeed { get; }
         public int digits { get; }
+
+        public int LifeNumber { get; }
+        public int NumberOfDeleteOnDecreaseLife { get; }
+
         public List<NumberSpawnDelayTimeInstraction> NumberSpawnDelayTimeInstractions { get; }
 
-        public Senario(string _name,SenarioType _type, float _FallingSpeed, List<NumberSpawnDelayTimeInstraction> _numberSpawnDelayTimeInstractions, int _digits)
+        public Senario(string _name,SenarioType _type, float _FallingSpeed, List<NumberSpawnDelayTimeInstraction> _numberSpawnDelayTimeInstractions, int _digits, int lifeNumber, int numberOfDeleteOnDecreaseLife)
         {
             this.Name = _name;
             this.Type = _type;
             this.FallingSpeed = _FallingSpeed;
             this.NumberSpawnDelayTimeInstractions = _numberSpawnDelayTimeInstractions;
             this.digits = _digits;
+            LifeNumber = lifeNumber;
+            NumberOfDeleteOnDecreaseLife = numberOfDeleteOnDecreaseLife;
         }
 
         /// <summary>

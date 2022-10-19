@@ -12,6 +12,7 @@ public enum EventType
     TypeCorrect,
     TypeWrong,
     TimePause,
+    DecreaseLife,
 }
 
 
