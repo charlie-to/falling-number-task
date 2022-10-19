@@ -7,6 +7,8 @@ using UnityEngine;
 public class TaskData
 {
     [SerializeField]
+    private string name;
+    [SerializeField]
     private string SubjectNumber;
     [SerializeField]
     private float FallingSpeed;
@@ -22,8 +24,9 @@ public class TaskData
     private int NumberOfDeleteOnDecreaseLife;
     
 
-    public TaskData (string _SubjectNumber, float _FallingSpeed, float _NumberSpawnDelayTime, int lifeNumber, int numberOfDeleteOnDecreaseLife)
+    public TaskData (string _name, string _SubjectNumber, float _FallingSpeed, float _NumberSpawnDelayTime, int lifeNumber, int numberOfDeleteOnDecreaseLife)
     {
+        this.name = _name;
         SubjectNumber = _SubjectNumber;
         FallingSpeed = _FallingSpeed;
         NumberSpawnDelayTime = _NumberSpawnDelayTime;
