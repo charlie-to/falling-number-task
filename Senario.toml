@@ -47,9 +47,9 @@ change_at = 240.0
 senario_name = "GetPerformance_max3"
 type = "train"
 digits = 4
-life = 3
-number_of_delete_on_decrease_life = 3
-range_of_delete_on_decrease_life = 1.0
+life = 1
+number_of_delete_on_decrease_life = 0
+range_of_delete_on_decrease_life = 13
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 8.0
 change_at = 0.0
