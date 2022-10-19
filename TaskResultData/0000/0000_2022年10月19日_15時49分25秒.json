@@ -1,0 +1,1 @@
+{"SubjectNumber":"0000","FallingSpeed":0.75,"NumberSpawnDelayTime":2.0,"TaskStartAt":"2022-10-19 15:49:09Z","taskEvents":[{"ID":1,"EventAt":"2022-10-19T15:49:09.2057376+09:00","eventTypeString":"NumberCreate","DestroyPosition":0.0}],"LifeNumber":3,"NumberOfDeleteOnDecreaseLife":3,"RangeOfDeleteOnDecreaseLife":0.0}

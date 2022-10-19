@@ -20,9 +20,11 @@ public class TaskData
     private int LifeNumber;
     [SerializeField]
     private int NumberOfDeleteOnDecreaseLife;
+    [SerializeField]
+    private float RangeOfDeleteOnDecreaseLife;
     
 
-    public TaskData (string _SubjectNumber, float _FallingSpeed, float _NumberSpawnDelayTime, int lifeNumber, int numberOfDeleteOnDecreaseLife)
+    public TaskData (string _SubjectNumber, float _FallingSpeed, float _NumberSpawnDelayTime, int lifeNumber, int numberOfDeleteOnDecreaseLife, float rangeOfDeleteOnDecreaseOnLife)
     {
         SubjectNumber = _SubjectNumber;
         FallingSpeed = _FallingSpeed;
@@ -30,7 +32,8 @@ public class TaskData
         TaskStartAt = DateTime.Now.ToString("u");
         LifeNumber = lifeNumber;
         NumberOfDeleteOnDecreaseLife = numberOfDeleteOnDecreaseLife;
-        // AreaOfDeleteOnDecreaseLife = areaOfDeleteOnDecreaseLife;
+        RangeOfDeleteOnDecreaseLife = rangeOfDeleteOnDecreaseOnLife;
+        RangeOfDeleteOnDecreaseLife = rangeOfDeleteOnDecreaseOnLife;
     }
 
     public void AddTaskEvent(EventType _eventType)

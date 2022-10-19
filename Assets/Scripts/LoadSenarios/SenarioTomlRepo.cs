@@ -62,6 +62,7 @@ public class SenarioTomlRepo
         int digits = senarioTable.Get<int>("digits");
         int LifeNumber = senarioTable.Get<int>("life");
         int NumberOfDelete = senarioTable.Get<int>("number_of_delete_on_decrease_life");
+        float RangeOfDeleteOnDecreaseLife = senarioTable.Get<float>("range_of_delete_on_decrease_life");
 
         // add instrantions
         List<NumberSpawnDelayTimeInstraction> numberSpawnDelayTimeInstractions = new List<NumberSpawnDelayTimeInstraction>();
@@ -72,7 +73,7 @@ public class SenarioTomlRepo
             numberSpawnDelayTimeInstractions.Add(instraction);
         }
 
-        Senario senario = new Senario(name, type , fallingSpeed, numberSpawnDelayTimeInstractions, digits,LifeNumber,NumberOfDelete);
+        Senario senario = new Senario(name, type , fallingSpeed, numberSpawnDelayTimeInstractions, digits,LifeNumber,NumberOfDelete, RangeOfDeleteOnDecreaseLife);
 
         return senario;
     }

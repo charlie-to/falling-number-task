@@ -10,4 +10,5 @@ public class TaskManager : MonoBehaviour
     public static int SenarioNumber = 0;
     public static int Life = 3;
     public static int NumberOfDeleteOnDecLife = 3;
+    public static float  RangeOfDeleteOnDecreaseLife = 0;
 }

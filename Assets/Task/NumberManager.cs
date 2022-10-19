@@ -57,9 +57,11 @@ public class NumberManager : MonoBehaviour
         // numberのy座標が範囲外ならライフを減らす
         if (numbers[0].display.transform.position.y <= -6f)
         {
-            // ライフを減らして指定個数の数字を消す
+            // ライフを減らす
             TaskManager.Life--;
             taskManeger.AddTaskEvent(EventType.DecreaseLife); // Log Event
+            
+            // 指定個数の数字を消す
             for (int i = 0; i <= TaskManager.NumberOfDeleteOnDecLife; i++)
             {
                 if (numbers.Count == 0) break;
@@ -70,6 +72,26 @@ public class NumberManager : MonoBehaviour
                     deleteNumber.NumRemove();
                 }
             }
+
+            // 指定範囲以下の数字を消す
+            if(TaskManager.RangeOfDeleteOnDecreaseLife > 0)
+            {
+                List<Number> deleteNumbers = new List<Number>();
+                foreach(Number number in numbers)
+                {
+                    if( 7.0f - number.GetNumberPosition() >= TaskManager.RangeOfDeleteOnDecreaseLife)
+                    {
+                        deleteNumbers.Add(number);
+                    }
+                }
+                foreach(Number deleteNumber in deleteNumbers)
+                {
+                    numbers.Remove(deleteNumber);
+                    deleteNumber.NumRemove();
+                }
+            }
+
+            SetActiveNum();
 
             // ライフ０ならゲームオーバー
             if(TaskManager.Life == 0)
