@@ -20,6 +20,8 @@ namespace Assets.Scripts.LoadSenarios
         public int NumberOfDeleteOnDecreaseLife { get; }
         public float RangeOfDeleteOnDecreaseLife { get; }
 
+        private float UserTypingTime;
+
         public List<NumberSpawnDelayTimeInstraction> NumberSpawnDelayTimeInstractions { get; }
 
         public Senario(string _name,SenarioType _type, float _FallingSpeed, List<NumberSpawnDelayTimeInstraction> _numberSpawnDelayTimeInstractions, int _digits, int lifeNumber, int numberOfDeleteOnDecreaseLife, float rangeOfDeleteOnDecreaseLife)
@@ -34,6 +36,11 @@ namespace Assets.Scripts.LoadSenarios
             RangeOfDeleteOnDecreaseLife = rangeOfDeleteOnDecreaseLife;
         }
 
+        public void SetUserTypingTime( float _userTypingTime )
+        {
+            UserTypingTime = _userTypingTime;
+        }
+
         /// <summary>
         /// DelayTimeの変化率の計算
         /// 終了時は-1000fを返す
@@ -44,6 +51,10 @@ namespace Assets.Scripts.LoadSenarios
         {
             if (elapsedTime == 0f)
             {
+                if(this.Type == SenarioType.Auto)
+                {
+                    return NumberSpawnDelayTimeInstractions[0].NumberSpawnDelayTime * UserTypingTime;
+                }
                 return NumberSpawnDelayTimeInstractions[0].NumberSpawnDelayTime;
             }
 
@@ -56,13 +67,22 @@ namespace Assets.Scripts.LoadSenarios
             NumberSpawnDelayTimeInstraction nextInstraction = NumberSpawnDelayTimeInstractions[ NumberSpawnDelayTimeInstractions.IndexOf(currentInstrantion) +1];
            
             float dt = nextInstraction.ChangeAt - currentInstrantion.ChangeAt;
-            float ds = nextInstraction.NumberSpawnDelayTime - currentInstrantion.NumberSpawnDelayTime;
+            float ds = 0;
+            float previousSpeed = 0;
+            if( this.Type == SenarioType.Auto)
+            {
+                ds = nextInstraction.NumberSpawnDelayTime * UserTypingTime  - currentInstrantion.NumberSpawnDelayTime * UserTypingTime;
+                previousSpeed = currentInstrantion.NumberSpawnDelayTime * UserTypingTime;
+            }
+            else
+            {
+                ds = nextInstraction.NumberSpawnDelayTime - currentInstrantion.NumberSpawnDelayTime;
+                previousSpeed = currentInstrantion.NumberSpawnDelayTime;
+            }
             
-            return currentInstrantion.NumberSpawnDelayTime + ds*(elapsedTime - currentInstrantion.ChangeAt)/dt;
+            
+            return previousSpeed + ds*(elapsedTime - currentInstrantion.ChangeAt)/dt;
         }
-
-
-
     }
 
     public class NumberSpawnDelayTimeInstraction

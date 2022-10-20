@@ -14,6 +14,6 @@ public class TaskManager : MonoBehaviour
     public static int NumberOfDeleteOnDecLife = 3;
     public static float  RangeOfDeleteOnDecreaseLife = 0;
 
-    public static float UserTypingSpeed_Max = 0;
+    public static float UserTypingSpeed_Max = 3.0f;
     public static SenarioType senarioType;
 }

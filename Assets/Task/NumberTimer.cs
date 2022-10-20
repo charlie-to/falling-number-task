@@ -28,12 +28,14 @@ public class NumberTimer : MonoBehaviour
         // numberSpawnDelayUpdate = new NumberSpawnDelayUpdate(timer);
         senarioRepo = new SenarioTomlRepo();
         senario = senarioRepo.GetSenario(TaskManegerInTask.SenarioNumber);
-        TaskManager.NumberSpawnDelayTime = senario.NumberSpawnDelayTimeInstractions[0].NumberSpawnDelayTime;
         TaskManager.FallingSpeed = senario.FallingSpeed;
         TaskManager.Life = senario.LifeNumber;
         TaskManager.NumberOfDeleteOnDecLife = senario.NumberOfDeleteOnDecreaseLife;
         TaskManager.RangeOfDeleteOnDecreaseLife = senario.RangeOfDeleteOnDecreaseLife;
         TaskManager.senarioType = senario.Type;
+        senario.SetUserTypingTime(TaskManager.UserTypingSpeed_Max);
+
+        TaskManager.NumberSpawnDelayTime = senario.GetSpawnDelayTimeByTime(0);
     }
 
     private void Update()
@@ -43,7 +45,7 @@ public class NumberTimer : MonoBehaviour
         {
             TaskManegerInTask.NumberSpawnDelayTime = senario.GetSpawnDelayTimeByTime( timer.GetElapsedTime() );
         }
-        //Debug.Log(TaskManager.NumberSpawnDelayTime);
+        Debug.Log(TaskManager.NumberSpawnDelayTime);
         numberManager.GameOverCheck(); 
         NumberSpawn();
     }

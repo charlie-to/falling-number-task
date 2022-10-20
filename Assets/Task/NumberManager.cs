@@ -94,7 +94,7 @@ public class NumberManager : MonoBehaviour
             SetActiveNum();
 
             // ライフ０ならゲームオーバー
-            if(TaskManager.Life == 0)
+            if(TaskManager.Life <= 0)
             {
                  //game over 処理
                  taskManeger.Gameover();
