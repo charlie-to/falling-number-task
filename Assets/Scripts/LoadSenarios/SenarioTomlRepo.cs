@@ -57,7 +57,27 @@ public class SenarioTomlRepo
         if (senarioTable == null) return null;
 
         string name = senarioTable.Get<string>("senario_name");
-        SenarioType type = senarioTable.Get<string>("type") == "trainning" ? SenarioType.Training : SenarioType.task;
+        string senarioT = senarioTable.Get<string>("type");
+        SenarioType type;
+        switch (senarioT)
+        {
+            case "trainning":
+                type = SenarioType.Training;
+                break;
+            case "measure":
+                type = SenarioType.Measure;
+                break;
+            case "auto":
+                type = SenarioType.Auto;
+                break;
+            case "manual":
+                type = SenarioType.Manual;
+                break;
+            default:
+                type = SenarioType.Task;
+                break;
+
+        }
         float fallingSpeed = GetFallingSpeed();
         int digits = senarioTable.Get<int>("digits");
         int LifeNumber = senarioTable.Get<int>("life");

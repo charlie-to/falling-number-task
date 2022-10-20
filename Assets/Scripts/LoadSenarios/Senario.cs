@@ -78,6 +78,10 @@ namespace Assets.Scripts.LoadSenarios
     }
     public enum SenarioType
     {
-        Training, task
+        Training,
+        Measure,
+        Auto,
+        Manual,
+        Task
     }
 }

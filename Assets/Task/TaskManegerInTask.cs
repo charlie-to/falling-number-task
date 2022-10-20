@@ -5,6 +5,7 @@ using System.IO;
 using System;
 using System.Text;
 using UnityEngine.SceneManagement;
+using Assets.Scripts.LoadSenarios;
 
 public class TaskManegerInTask : TaskManager
 {
@@ -32,7 +33,6 @@ public class TaskManegerInTask : TaskManager
     // ゲームオーバー処理
     public void Gameover()
     {
-
         var filePath = Directory.GetCurrentDirectory() + "\\" + ResultSaveDirectory;
         Debug.Log(filePath);
         var fileName = SubjectNum + "_" + DateTime.Now.ToString("D") + "_" + DateTime.Now.ToString("HH") + "時" + DateTime.Now.ToString("mm") + "分" + DateTime.Now.ToString("ss") + "秒" + ".json";
@@ -61,5 +61,10 @@ public class TaskManegerInTask : TaskManager
             SceneManager.LoadScene("ErrorDialogScene");
         }
 
+        if(senarioType == SenarioType.Measure)
+        {
+            TaskManager.UserTypingSpeed_Max = taskData.GetUserTypingTimedByArea(7f);
+        }
+        
     }
 }

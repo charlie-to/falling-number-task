@@ -45,7 +45,7 @@ change_at = 240.0
 
 [[Senarios]]
 senario_name = "GetPerformance_max3"
-type = "train"
+type = "measure"
 digits = 4
 life = 1
 number_of_delete_on_decrease_life = 0

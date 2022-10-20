@@ -1,3 +1,4 @@
+using Assets.Scripts.LoadSenarios;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,4 +13,7 @@ public class TaskManager : MonoBehaviour
     public static int Life = 3;
     public static int NumberOfDeleteOnDecLife = 3;
     public static float  RangeOfDeleteOnDecreaseLife = 0;
+
+    public static float UserTypingSpeed_Max = 0;
+    public static SenarioType senarioType;
 }

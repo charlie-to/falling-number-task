@@ -33,6 +33,7 @@ public class NumberTimer : MonoBehaviour
         TaskManager.Life = senario.LifeNumber;
         TaskManager.NumberOfDeleteOnDecLife = senario.NumberOfDeleteOnDecreaseLife;
         TaskManager.RangeOfDeleteOnDecreaseLife = senario.RangeOfDeleteOnDecreaseLife;
+        TaskManager.senarioType = senario.Type;
     }
 
     private void Update()
