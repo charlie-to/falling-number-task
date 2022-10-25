@@ -1,28 +1,28 @@
-# Test Senario Ver.0.2
-# Last Change at Oct.14
+# Test Senario Ver.0.3
+# Last Change at Oct.25
 
 [meta]
-name = "test_senario1"
+name = "test_senario3"
 falling_speed = 0.75
 
 [[Senarios]]
-senario_name = "Trainning1"
-type = "auto"
+senario_name = "Practice1"
+type = "train"
 digits = 4
 life = 3
-number_of_delete_on_decrease_life = 3
-range_of_delete_on_decrease_life = 0.0
+number_of_delete_on_decrease_life = 0
+range_of_delete_on_decrease_life = 6.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
+spawn_delay_time = 5.0
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 3.0
+spawn_delay_time = 5.0
 change_at = 30.0
 [[Senarios.spawn_delay_times]] 
-spawn_delay_time = 3.0
-change_at = 90.0
+spawn_delay_time = 4.0
+change_at = 180.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 3.0
+spawn_delay_time = 4.0
 change_at = 240.0
 
 [[Senarios]]
@@ -31,15 +31,15 @@ type = "train"
 digits = 4
 life = 3
 number_of_delete_on_decrease_life = 0
-range_of_delete_on_decrease_life = 7.0
+range_of_delete_on_decrease_life = 6.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 1.0
+spawn_delay_time = 4.0
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 1.0
+spawn_delay_time = 3.0
 change_at = 90.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 1.0
+spawn_delay_time = 2.5
 change_at = 240.0
 
 
@@ -47,11 +47,11 @@ change_at = 240.0
 senario_name = "GetPerformance_max3"
 type = "measure"
 digits = 4
-life = 1
+life = 3
 number_of_delete_on_decrease_life = 0
-range_of_delete_on_decrease_life = 13
+range_of_delete_on_decrease_life = 6.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 8.0
+spawn_delay_time = 4.0
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 2.5
@@ -61,19 +61,52 @@ spawn_delay_time = 1.6
 change_at = 300.0
 
 [[Senarios]]
-senario_name = "check4"
+senario_name = "TP_low4"
 type = "auto"
 digits = 4
-life = 1
+life = 3
 number_of_delete_on_decrease_life = 0
-range_of_delete_on_decrease_life = 0.0
+range_of_delete_on_decrease_life = 6.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
+spawn_delay_time = 1.5
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 2.0
+spawn_delay_time = 1.14
 change_at = 60.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 2.0
+spawn_delay_time = 1.14
 change_at = 300.0
 
+[[Senarios]]
+senario_name = "TP_middle5"
+type = "auto"
+digits = 4
+life = 3
+number_of_delete_on_decrease_life = 0
+range_of_delete_on_decrease_life = 6.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 1.5
+change_at = 0.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 1.0
+change_at = 60.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 1.0
+change_at = 300.0
+
+[[Senarios]]
+senario_name = "TP_high6"
+type = "auto"
+digits = 4
+life = 3
+number_of_delete_on_decrease_life = 0
+range_of_delete_on_decrease_life = 6.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 1.5
+change_at = 0.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 0.89
+change_at = 60.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 0.89
+change_at = 300.0
