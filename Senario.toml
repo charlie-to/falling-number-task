@@ -3,7 +3,7 @@
 
 [meta]
 name = "test_senario1"
-falling_speed = 1
+falling_speed = 1.0
 
 [[Senarios]]
 senario_name = "Trainning1"
