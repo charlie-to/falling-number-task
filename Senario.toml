@@ -1,9 +1,9 @@
-# Test Senario Ver.0.1
-# 
+# Test Senario Ver.0.2
+# Last Change at Oct.14
 
 [meta]
 name = "test_senario1"
-falling_speed = 1.0
+falling_speed = 0.75
 
 [[Senarios]]
 senario_name = "Trainning1"
@@ -15,7 +15,7 @@ change_at = 0.0
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 10.0
 change_at = 30.0
-[[Senarios.spawn_delay_times]]
+[[Senarios.spawn_delay_times]] 
 spawn_delay_time = 8.0
 change_at = 90.0
 [[Senarios.spawn_delay_times]]
@@ -30,40 +30,38 @@ digits = 4
 spawn_delay_time = 10.0
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 10.0
-change_at = 30.0
-[[Senarios.spawn_delay_times]]
-spawn_delay_time = 6.0
+spawn_delay_time = 4.0
 change_at = 90.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 4.0
+change_at = 240.0
+
+
+[[Senarios]]
+senario_name = "GetPerformance_max3"
+type = "train"
+digits = 4
 [[Senarios.spawn_delay_times]]
 spawn_delay_time = 8.0
-change_at = 240.0
-
-[[Senarios]]
-senario_name = "Trainning3"
-type = "train"
-digits = 4
-[[Senarios.spawn_delay_times]]
-spawn_delay_time = 10.0
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
+spawn_delay_time = 2.5
 change_at = 90.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
-change_at = 240.0
-
-
-[[Senarios]]
-senario_name = "Trainning4"
-type = "train"
-digits = 4
-[[Senarios.spawn_delay_times]]
-spawn_delay_time = 10.0
-change_at = 0.0
-[[Senarios.spawn_delay_times]]
-spawn_delay_time = 5.0
-change_at = 90.0
-[[Senarios.spawn_delay_times]]
-spawn_delay_time = 1.0
+spawn_delay_time = 1.6
 change_at = 300.0
+
+[[Senarios]]
+senario_name = "check4"
+type = "train"
+digits = 4
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 8.0
+change_at = 0.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 2.0
+change_at = 90.0
+[[Senarios.spawn_delay_times]]
+spawn_delay_time = 1.95
+change_at = 300.0
+

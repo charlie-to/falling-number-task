@@ -9,7 +9,7 @@ using Assets.Scripts.LoadSenarios;
 
 public class SenarioTomlRepo
 {
-    public string file_path = string.Format("{0}\\Senario.toml", Directory.GetCurrentDirectory());
+    public string file_path = string.Format("{0}/Senario.toml", Directory.GetCurrentDirectory());
 
     private TomlTableArray senarios;
     private TomlTable meta;

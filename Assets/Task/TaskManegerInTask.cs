@@ -51,6 +51,7 @@ public class TaskManegerInTask : TaskManager
                 sw.WriteLine(JsonUtility.ToJson(taskData));
                 sw.Flush();
             }
+            Time.timeScale = 1;
             SceneManager.LoadScene("TaskChoiceScene");
         } catch (Exception e)
         {
