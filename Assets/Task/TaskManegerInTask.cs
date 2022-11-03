@@ -9,7 +9,7 @@ using Assets.Scripts.LoadSenarios;
 
 public class TaskManegerInTask : TaskManager
 {
-    private string ResultSaveDirectory = $"TaskResultData\\{TaskManager.SubjectNum}";
+    private string ResultSaveDirectory = $"TaskResultData/{TaskManager.SubjectNum}";
     [SerializeField]
     private TaskData taskData;
 
@@ -33,9 +33,9 @@ public class TaskManegerInTask : TaskManager
     // ゲームオーバー処理
     public void Gameover()
     {
-        var filePath = Directory.GetCurrentDirectory() + "\\" + ResultSaveDirectory;
+        var filePath = Directory.GetCurrentDirectory() + "/" + ResultSaveDirectory;
         Debug.Log(filePath);
-        var fileName = SubjectNum + "_" + DateTime.Now.ToString("D") + "_" + DateTime.Now.ToString("HH") + "時" + DateTime.Now.ToString("mm") + "分" + DateTime.Now.ToString("ss") + "秒" + ".json";
+        var fileName = SubjectNum + "_" + DateTime.Now.ToString("MM") + DateTime.Now.ToString("dd") + "-" + DateTime.Now.ToString("HH") + DateTime.Now.ToString("mm") + DateTime.Now.ToString("ss")+ "-" + TaskManager.SenarioNumber.ToString() + ".json";
 
         if (!Directory.Exists(filePath)) Directory.CreateDirectory(filePath);
 
@@ -46,7 +46,7 @@ public class TaskManegerInTask : TaskManager
             //throw new Exception("test");
             //
 
-            using (StreamWriter sw = new StreamWriter(filePath + "\\" + fileName, false))
+            using (StreamWriter sw = new StreamWriter(filePath + "/" + fileName, false))
             {
                 sw.WriteLine(JsonUtility.ToJson(taskData));
                 sw.Flush();
