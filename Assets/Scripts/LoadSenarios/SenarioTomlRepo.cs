@@ -15,12 +15,12 @@ public class SenarioTomlRepo
     private TomlTable meta;
 
     /// <summary>
-    /// ƒCƒ“ƒXƒ^ƒ“ƒX‚ÉƒVƒiƒŠƒIƒf[ƒ^‚½‚¹‚é
+    /// ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ÉƒVï¿½iï¿½ï¿½ï¿½Iï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public SenarioTomlRepo()
     {
         this.Load();
-    } 
+    }
 
 
     public void Load()
@@ -41,9 +41,9 @@ public class SenarioTomlRepo
     }
 
     /// <summary>
-    /// ”š—‰º‘¬“x‚Ìæ“¾
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Ìæ“¾
     /// </summary>
-    /// <returns>”š—‰º‘¬“x</returns>
+    /// <returns>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½x</returns>
     public float GetFallingSpeed()
     {
         if (meta == null) return 0f;
@@ -86,14 +86,14 @@ public class SenarioTomlRepo
 
         // add instrantions
         List<NumberSpawnDelayTimeInstraction> numberSpawnDelayTimeInstractions = new List<NumberSpawnDelayTimeInstraction>();
-        for (int i = 0; i <= senarioTable.Get<TomlTableArray>("spawn_delay_times").Count -1 ; i++)
+        for (int i = 0; i <= senarioTable.Get<TomlTableArray>("spawn_delay_times").Count - 1; i++)
         {
             TomlTable table = senarioTable.Get<TomlTableArray>("spawn_delay_times")[i];
             NumberSpawnDelayTimeInstraction instraction = new NumberSpawnDelayTimeInstraction(table.Get<float>("spawn_delay_time"), table.Get<float>("change_at"));
             numberSpawnDelayTimeInstractions.Add(instraction);
         }
 
-        Senario senario = new Senario(name, type , fallingSpeed, numberSpawnDelayTimeInstractions, digits,LifeNumber,NumberOfDelete, RangeOfDeleteOnDecreaseLife);
+        Senario senario = new Senario(name, type, fallingSpeed, numberSpawnDelayTimeInstractions, digits, LifeNumber, NumberOfDelete, RangeOfDeleteOnDecreaseLife);
 
         return senario;
     }

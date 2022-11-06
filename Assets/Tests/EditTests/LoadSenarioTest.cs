@@ -35,7 +35,7 @@ public class LoadSenarioTest
     public void LoadSenarioTest_GetSenario0()
     {
         SenarioTomlRepo senarioTomlRepo = new SenarioTomlRepo();
-        Senario senario =  senarioTomlRepo.GetSenario(0);
+        Senario senario = senarioTomlRepo.GetSenario(0);
 
         Assert.IsNotNull(senario);
         Assert.That(senario.NumberSpawnDelayTimeInstractions.Count != 0);
