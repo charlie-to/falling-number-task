@@ -10,12 +10,6 @@ public class TaskManagerInTaskChoice : TaskManager
 
     private void Start()
     {
-
-        Debug.Log("this is start tm");
-        Debug.Log(message: TaskManagerInTaskChoice.SubjectNum);
-
-        subjectNumberField.text = TaskManagerInTaskChoice.SubjectNum;
-
-        
+        subjectNumberField.text = TaskManagerInTaskChoice.SubjectNum;   
     }
 }

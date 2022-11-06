@@ -1,4 +1,7 @@
+# font is too big to upload
 /Assets/Fonts/
+# not upload the builds
+/rerease-folder/
 
 /[Ll]ibrary/
 /[Tt]emp/

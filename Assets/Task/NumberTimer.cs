@@ -1,5 +1,7 @@
+using Assets.Scripts.LoadSenarios;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -7,7 +9,6 @@ public class NumberTimer : MonoBehaviour
 {
     public float numDelay;
     private float nextNumTime = 0f;
-    private int digits = 3;
 
     public NumberManager numberManager;
     public NumDespawner numDespawner;
@@ -15,22 +16,38 @@ public class NumberTimer : MonoBehaviour
     public PauseDisplay pauseDisplay;
     public TaskManegerInTask taskManeger;
     public InternalTimer timer;
+    // private NumberSpawnDelayUpdate numberSpawnDelayUpdate;
 
-    private NumberSpawnDelayUpdate numberSpawnDelayUpdate;
+    private SenarioTomlRepo senarioRepo;
+    private Senario senario;
 
     private void Start()
     {
         // time freeze at beginning
         TimeFreeze();
-        numberSpawnDelayUpdate = new NumberSpawnDelayUpdate(timer);
+        // numberSpawnDelayUpdate = new NumberSpawnDelayUpdate(timer);
+        senarioRepo = new SenarioTomlRepo();
+        senario = senarioRepo.GetSenario(TaskManegerInTask.SenarioNumber);
+        TaskManager.FallingSpeed = senario.FallingSpeed;
+        TaskManager.Life = senario.LifeNumber;
+        TaskManager.NumberOfDeleteOnDecLife = senario.NumberOfDeleteOnDecreaseLife;
+        TaskManager.RangeOfDeleteOnDecreaseLife = senario.RangeOfDeleteOnDecreaseLife;
+        TaskManager.senarioType = senario.Type;
+        senario.SetUserTypingTime(TaskManager.UserTypingSpeed_Max);
+
+        TaskManager.NumberSpawnDelayTime = senario.GetSpawnDelayTimeByTime(0);
     }
 
     private void Update()
     {
-        numberSpawnDelayUpdate.Update();
+        // numberSpawnDelayUpdate.Update();
+        if(Time.timeScale == 1)
+        {
+            TaskManegerInTask.NumberSpawnDelayTime = senario.GetSpawnDelayTimeByTime( timer.GetElapsedTime() );
+        }
+        Debug.Log(TaskManager.NumberSpawnDelayTime);
+        numberManager.GameOverCheck(); 
         NumberSpawn();
-        numberManager.GameOverCheck();
-        Debug.Log("Delay:"+TaskManegerInTask.NumberSpawnDelayTime);
     }
 
     // 
@@ -38,7 +55,7 @@ public class NumberTimer : MonoBehaviour
     {
         if (Time.time >= nextNumTime)
          {
-            numberManager.AddNumber( numGenerator.generateString(digits) );
+            numberManager.AddNumber( numGenerator.generateString(senario.digits) );
             nextNumTime = Time.time + TaskManegerInTask.NumberSpawnDelayTime;
         }
     }

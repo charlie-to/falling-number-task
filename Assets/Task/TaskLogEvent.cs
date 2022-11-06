@@ -12,6 +12,7 @@ public enum EventType
     TypeCorrect,
     TypeWrong,
     TimePause,
+    DecreaseLife,
 }
 
 
@@ -26,18 +27,34 @@ public class TaskLogEvent
     private string eventTypeString;
     [SerializeField]
     private float DestroyPosition;
-    private EventType eventType;
+    private EventType EventType;
+    private DateTime dateTime;
 
     public TaskLogEvent( int _ID, EventType _eventType)
     {
         ID = _ID;
-        eventType = _eventType;
+        EventType = _eventType;
         eventTypeString = _eventType.ToString();
-        EventAt = DateTime.Now.ToString("u");
+        dateTime = DateTime.Now;
+        EventAt = dateTime.ToString("O");
     }
 
     public void AddDestroyPoint(float _position)
     {
         DestroyPosition = _position;
     }
+
+    public EventType GetEventType()
+    {
+        return EventType;
+    }
+    public float GetDestroyPosition()
+    {
+        return DestroyPosition;
+    }
+    public DateTime GetDateTime()
+    {
+        return dateTime;
+    }
+
 }

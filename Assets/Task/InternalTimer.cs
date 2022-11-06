@@ -11,26 +11,10 @@ interface IInternalTimer
 }
 public class InternalTimer :  MonoBehaviour, IInternalTimer
 {
-
-    public static InternalTimer instance;
-
     private float elapsedTime;
     private bool running;
 
     public bool IsRunning { get { return running; } }
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     private void Start()
     {
@@ -40,8 +24,7 @@ public class InternalTimer :  MonoBehaviour, IInternalTimer
     private void Update()
     {
         if (Time.timeScale == 0) return;
-        
-        elapsedTime += Time.deltaTime;
+        if (Time.timeScale == 1) elapsedTime += Time.deltaTime;
     }
     public void StartTimer()
     {

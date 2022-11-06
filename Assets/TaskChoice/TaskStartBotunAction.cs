@@ -4,70 +4,85 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class TaskStartBotunAction : MonoBehaviour
 {
-    public TMP_InputField fallingSpeed;
-    public TMP_InputField delayTime;
+    public TMP_InputField senarioNumberInputField;
     public TextMeshProUGUI fallingSpeedWrongWorning;
-    public TaskManagerInTaskChoice taskManagerInTaskChoice;
+    public TextMeshProUGUI senarioLoadStatusField;
 
-    private float fallingSpeedNum;
-    private float delayTimeNum;
+    [Serialize]
+    private SenarioTomlRepo senarioTomlRepo;
+    private int senarioNumber;
+
+    public void Start()
+    {
+        LoadSenarios();
+        StartCoroutine(TextSetNull());
+    }
+
+    public void LoadSenarios()
+    {
+        senarioTomlRepo = new SenarioTomlRepo();
+        try
+         {
+            senarioLoadStatusField.text = $" {senarioTomlRepo.GetSenarioLength().ToString()} Senarios Loaded ";
+         }
+         catch
+         {
+            senarioLoadStatusField.text = "Senario data is missing.";
+         }
+    }
 
     public void OnClick()
     {
-        fallingSpeed = fallingSpeed.GetComponent<TMP_InputField>();
-        delayTime = delayTime.GetComponent<TMP_InputField>();
+        
+        senarioNumberInputField = senarioNumberInputField.GetComponent<TMP_InputField>();
 
-        if (fallingSpeed.text == "")
+        if (senarioNumberInputField.text == null)
         {
-            fallingSpeedWrongWorning.text += "落下速度を入力してください。";
-            StartCoroutine("TextSet");
+            fallingSpeedWrongWorning.text = "シナリオ番号を入力してください。"; 
             return;
-        }
-        if(delayTime.text == "")
-        {
-            fallingSpeedWrongWorning.text += "出現間隔を入力してください。";
         }
 
         try
         {
-            fallingSpeedNum = Convert.ToSingle(fallingSpeed.text);
-            delayTimeNum = Convert.ToSingle(delayTime.text);
+            senarioNumber = int.Parse(senarioNumberInputField.text);
         }
         catch
         {
-            fallingSpeedWrongWorning.text += "不正な値です。";
-            StartCoroutine("TextSet");
+            fallingSpeedWrongWorning.text = "不正な入力値です。";
             return;
         }
+
+        if (senarioNumber <= 0 || senarioTomlRepo.GetSenarioLength() < senarioNumber)
+        {
+            fallingSpeedWrongWorning.text = "入力した値に対応するシナリオが存在しません";
+            return ;
+        }  
 
         GameSceneToTask();
     }
 
-    // ルーチン
-    IEnumerator TextSet()
+    public void OnClickReload()
     {
-        yield return new WaitForSeconds(5.0f);
-        fallingSpeedWrongWorning.text = "";
+        LoadSenarios();
+    }
+
+    // ルーチン
+    private IEnumerator TextSetNull()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5.0f);
+            fallingSpeedWrongWorning.text = "";
+        }
     }
 
     private void GameSceneToTask()
     {
-        Debug.Log("hello");
-        Debug.Log(TaskManegerInTask.SubjectNum);
-        SceneManager.sceneLoaded += GameSceneLoaded1;
+        TaskManager.SenarioNumber = senarioNumber -1;
         SceneManager.LoadScene("TaskScene");
-    }
-
-    private void GameSceneLoaded1(Scene next, LoadSceneMode mode)
-    {
-        // var nextTaskManager = GameObject.Find("TaskManager").GetComponent<TaskManegerInTask>();
-
-        TaskManager.FallingSpeed = fallingSpeedNum;
-        TaskManager.NumberSpawnDelayTime = delayTimeNum;
-
-        SceneManager.sceneLoaded -= GameSceneLoaded1;
     }
 }

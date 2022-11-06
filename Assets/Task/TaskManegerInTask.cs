@@ -5,33 +5,17 @@ using System.IO;
 using System;
 using System.Text;
 using UnityEngine.SceneManagement;
+using Assets.Scripts.LoadSenarios;
 
 public class TaskManegerInTask : TaskManager
 {
-    private string ResultSaveDirectory = "TaskResultData";
+    private string ResultSaveDirectory = $"TaskResultData/{TaskManager.SubjectNum}";
     [SerializeField]
     private TaskData taskData;
 
     private void Start()
     {
-        PropatyInitiate();
-        //Debug.Log("this is when start of tm");
-        //Debug.Log("subject Num : " + TaskManegerInTask.SubjectNum);
-        //Debug.Log("falling speed:" + TaskManegerInTask.FallingSpeed);
-        taskData = new TaskData(SubjectNum, FallingSpeed, NumberSpawnDelayTime);
-    }
-
-    // Falling speed が初期値の場合は１を代入
-    private void PropatyInitiate() { 
-        if(FallingSpeed == 0)
-        {
-            FallingSpeed = 0.7f;
-        }
-        if (SubjectNum == null)
-        {
-            SubjectNum = "0000";
-        }
-        if (NumberSpawnDelayTime == 0) NumberSpawnDelayTime = 3.0f;
+        taskData = new TaskData(TaskManager.Name, TaskManager.SubjectNum, TaskManager.FallingSpeed, TaskManager.NumberSpawnDelayTime, TaskManager.Life, TaskManager.NumberOfDeleteOnDecLife ,TaskManager.RangeOfDeleteOnDecreaseLife);
     }
 
     // タスクイベント
@@ -44,13 +28,14 @@ public class TaskManegerInTask : TaskManager
         taskData.AddTaskEvent(_eventType, Position);
     }
 
+
+
     // ゲームオーバー処理
     public void Gameover()
     {
-
-        var filePath = Directory.GetCurrentDirectory() + "\\" + ResultSaveDirectory;
+        var filePath = Directory.GetCurrentDirectory() + "/" + ResultSaveDirectory;
         Debug.Log(filePath);
-        var fileName = SubjectNum + "_" + DateTime.Now.ToString("D")+ "_" + DateTime.Now.ToString("HH")+ "時" + DateTime.Now.ToString("mm") + "分"+ DateTime.Now.ToString("ss")+ "秒" + ".json";
+        var fileName = SubjectNum + "_" + DateTime.Now.ToString("MM") + DateTime.Now.ToString("dd") + "-" + DateTime.Now.ToString("HH") + DateTime.Now.ToString("mm") + DateTime.Now.ToString("ss")+ "-" + TaskManager.SenarioNumber.ToString() + ".json";
 
         if (!Directory.Exists(filePath)) Directory.CreateDirectory(filePath);
 
@@ -61,17 +46,24 @@ public class TaskManegerInTask : TaskManager
             //throw new Exception("test");
             //
 
-            using (StreamWriter sw = new StreamWriter(filePath + "\\" + fileName , false))
+            using (StreamWriter sw = new StreamWriter(filePath + "/" + fileName, false))
             {
                 sw.WriteLine(JsonUtility.ToJson(taskData));
                 sw.Flush();
             }
+            Time.timeScale = 1;
             SceneManager.LoadScene("TaskChoiceScene");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             // ファイルを作成できなかったときになにかする
             ErrorDialogMessageHandlerField.ErrorMessageText = "cannnot write json to a file. the json is " + JsonUtility.ToJson(taskData) + e.Message;
             SceneManager.LoadScene("ErrorDialogScene");
+        }
+
+        if(senarioType == SenarioType.Measure)
+        {
+            TaskManager.UserTypingSpeed_Max = taskData.GetUserTypingTimedByArea(7f);
         }
         
     }
