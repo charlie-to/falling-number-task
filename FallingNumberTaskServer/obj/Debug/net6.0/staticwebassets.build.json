@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "MxEkVNEpSWXzla4pza6jCDQ+l4RwZYx5Km7EI7rKf2w=",
+  "Source": "FallingNumberTaskServer",
+  "BasePath": "_content/FallingNumberTaskServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

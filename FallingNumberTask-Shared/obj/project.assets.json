@@ -1,0 +1,591 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Grpc.Core.Api/2.35.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MagicOnion.Abstractions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.35.0",
+          "MessagePack": "2.2.85"
+        },
+        "compile": {
+          "lib/netstandard2.0/MagicOnion.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MagicOnion.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MagicOnion.MSBuild.Tasks/4.5.2": {
+        "type": "package",
+        "build": {
+          "build/MagicOnion.MSBuild.Tasks.props": {}
+        }
+      },
+      "MessagePack/2.4.35": {
+        "type": "package",
+        "dependencies": {
+          "MessagePack.Annotations": "2.4.35",
+          "Microsoft.NET.StringTools": "1.0.0"
+        },
+        "compile": {
+          "lib/net6.0/MessagePack.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MessagePack.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MessagePack.Annotations/2.4.35": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MessagePack.Annotations.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MessagePack.Annotations.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MessagePack.MSBuild.Tasks/2.4.35": {
+        "type": "package",
+        "build": {
+          "build/MessagePack.MSBuild.Tasks.props": {},
+          "build/MessagePack.MSBuild.Tasks.targets": {}
+        }
+      },
+      "MessagePack.UnityShims/2.4.35": {
+        "type": "package",
+        "dependencies": {
+          "MessagePack": "2.4.35"
+        },
+        "compile": {
+          "lib/netstandard2.0/MessagePack.UnityShims.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MessagePack.UnityShims.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.NET.StringTools/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.NET.StringTools.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.NET.StringTools.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "System.Memory/4.5.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Grpc.Core.Api/2.35.0": {
+      "sha512": "3ZpDzd5iMRBUv22hcvBqhL1yFFNfa9AccG8koco0ezbO/NMt3E0GsTf1BeIZ2G6ceFZR3fEMawpiJAlXhDEpQA==",
+      "type": "package",
+      "path": "grpc.core.api/2.35.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.core.api.2.35.0.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net45/Grpc.Core.Api.dll",
+        "lib/net45/Grpc.Core.Api.pdb",
+        "lib/net45/Grpc.Core.Api.xml",
+        "lib/netstandard1.5/Grpc.Core.Api.dll",
+        "lib/netstandard1.5/Grpc.Core.Api.pdb",
+        "lib/netstandard1.5/Grpc.Core.Api.xml",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.xml"
+      ]
+    },
+    "MagicOnion.Abstractions/4.5.2": {
+      "sha512": "JOKFO9dkCAQcYk/PyeZX3unOC73zQMhpgjuieBtHrBHKrqFK3+Bo/fjON7PMQJ5BqwkPMjUEas7gT/r6pgfzOg==",
+      "type": "package",
+      "path": "magiconion.abstractions/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/MagicOnion.Abstractions.dll",
+        "lib/netstandard2.0/MagicOnion.Abstractions.xml",
+        "magiconion.abstractions.4.5.2.nupkg.sha512",
+        "magiconion.abstractions.nuspec"
+      ]
+    },
+    "MagicOnion.MSBuild.Tasks/4.5.2": {
+      "sha512": "dMu42eGV5J1a4SZ2Ibcn4mb2FiTkz7OkznN2GhGbVDyb+GRV63+JQ/ntarSRoVCD+Bck7FgyZ133dKODq5eHbw==",
+      "type": "package",
+      "path": "magiconion.msbuild.tasks/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/MagicOnion.MSBuild.Tasks.props",
+        "magiconion.msbuild.tasks.4.5.2.nupkg.sha512",
+        "magiconion.msbuild.tasks.nuspec",
+        "tasks/netstandard2.0/Humanizer.dll",
+        "tasks/netstandard2.0/MagicOnion.GeneratorCore.dll",
+        "tasks/netstandard2.0/MagicOnion.MSBuild.Tasks.dll",
+        "tasks/netstandard2.0/MagicOnion.MSBuild.Tasks.xml",
+        "tasks/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tasks/netstandard2.0/Microsoft.Build.Framework.dll",
+        "tasks/netstandard2.0/Microsoft.Build.Utilities.Core.dll",
+        "tasks/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "tasks/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "tasks/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.dll",
+        "tasks/netstandard2.0/Microsoft.CodeAnalysis.dll",
+        "tasks/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "tasks/netstandard2.0/System.Buffers.dll",
+        "tasks/netstandard2.0/System.CodeDom.dll",
+        "tasks/netstandard2.0/System.Collections.Immutable.dll",
+        "tasks/netstandard2.0/System.Composition.AttributedModel.dll",
+        "tasks/netstandard2.0/System.Composition.Convention.dll",
+        "tasks/netstandard2.0/System.Composition.Hosting.dll",
+        "tasks/netstandard2.0/System.Composition.Runtime.dll",
+        "tasks/netstandard2.0/System.Composition.TypedParts.dll",
+        "tasks/netstandard2.0/System.Linq.Expressions.dll",
+        "tasks/netstandard2.0/System.Linq.dll",
+        "tasks/netstandard2.0/System.Memory.dll",
+        "tasks/netstandard2.0/System.Numerics.Vectors.dll",
+        "tasks/netstandard2.0/System.ObjectModel.dll",
+        "tasks/netstandard2.0/System.Reflection.Emit.ILGeneration.dll",
+        "tasks/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "tasks/netstandard2.0/System.Reflection.Emit.dll",
+        "tasks/netstandard2.0/System.Reflection.Metadata.dll",
+        "tasks/netstandard2.0/System.Reflection.TypeExtensions.dll",
+        "tasks/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "tasks/netstandard2.0/System.Runtime.Serialization.Primitives.dll",
+        "tasks/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "tasks/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "tasks/netstandard2.0/System.Threading.Thread.dll",
+        "tasks/netstandard2.0/System.Threading.dll",
+        "tasks/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "tasks/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "tasks/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "tasks/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "tasks/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll"
+      ]
+    },
+    "MessagePack/2.4.35": {
+      "sha512": "sWyuByDues5fXghrCXXt5BSiqsQSjFWC+srBU97iwWWCV3JhiI3HoML5/Uj4zK9yD8pnAk2oobuuvwYfHhUruA==",
+      "type": "package",
+      "path": "messagepack/2.4.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net6.0/MessagePack.dll",
+        "lib/net6.0/MessagePack.xml",
+        "lib/netcoreapp3.1/MessagePack.dll",
+        "lib/netcoreapp3.1/MessagePack.xml",
+        "lib/netstandard2.0/MessagePack.dll",
+        "lib/netstandard2.0/MessagePack.xml",
+        "messagepack.2.4.35.nupkg.sha512",
+        "messagepack.nuspec"
+      ]
+    },
+    "MessagePack.Annotations/2.4.35": {
+      "sha512": "6wfQ3Law5TMPeMm/HpYpMLal5HzEj70QFmbXWzHJjRsxF+nEol8RP3mqGUIctN9pItdtKCpbrpP8iEpSCkORCA==",
+      "type": "package",
+      "path": "messagepack.annotations/2.4.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/MessagePack.Annotations.dll",
+        "lib/netstandard2.0/MessagePack.Annotations.xml",
+        "messagepack.annotations.2.4.35.nupkg.sha512",
+        "messagepack.annotations.nuspec"
+      ]
+    },
+    "MessagePack.MSBuild.Tasks/2.4.35": {
+      "sha512": "bvIOG62ld43uT7yYeiaaKUUHzOjwf/isMGx6zfB5o1xU/2s9Fr+8KeoWndFlhGfo1I1E/Jj3amLqftyyxcrmdw==",
+      "type": "package",
+      "path": "messagepack.msbuild.tasks/2.4.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/Humanizer.dll",
+        "build/MessagePack.Annotations.dll",
+        "build/MessagePack.Annotations.pdb",
+        "build/MessagePack.Annotations.xml",
+        "build/MessagePack.GeneratorCore.dll",
+        "build/MessagePack.GeneratorCore.pdb",
+        "build/MessagePack.GeneratorCore.xml",
+        "build/MessagePack.MSBuild.Tasks.deps.json",
+        "build/MessagePack.MSBuild.Tasks.dll",
+        "build/MessagePack.MSBuild.Tasks.pdb",
+        "build/MessagePack.MSBuild.Tasks.props",
+        "build/MessagePack.MSBuild.Tasks.targets",
+        "build/MessagePack.MSBuild.Tasks.xml",
+        "build/MessagePack.dll",
+        "build/MessagePack.pdb",
+        "build/MessagePack.xml",
+        "build/Microsoft.Bcl.AsyncInterfaces.dll",
+        "build/Microsoft.Build.Framework.dll",
+        "build/Microsoft.Build.Utilities.Core.dll",
+        "build/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "build/Microsoft.CodeAnalysis.CSharp.dll",
+        "build/Microsoft.CodeAnalysis.Workspaces.dll",
+        "build/Microsoft.CodeAnalysis.dll",
+        "build/Microsoft.NET.StringTools.dll",
+        "build/System.Buffers.dll",
+        "build/System.CodeDom.dll",
+        "build/System.Collections.Immutable.dll",
+        "build/System.Composition.AttributedModel.dll",
+        "build/System.Composition.Convention.dll",
+        "build/System.Composition.Hosting.dll",
+        "build/System.Composition.Runtime.dll",
+        "build/System.Composition.TypedParts.dll",
+        "build/System.IO.Pipelines.dll",
+        "build/System.Linq.Expressions.dll",
+        "build/System.Linq.dll",
+        "build/System.Memory.dll",
+        "build/System.Numerics.Vectors.dll",
+        "build/System.ObjectModel.dll",
+        "build/System.Reflection.Emit.ILGeneration.dll",
+        "build/System.Reflection.Emit.Lightweight.dll",
+        "build/System.Reflection.Emit.dll",
+        "build/System.Reflection.Metadata.dll",
+        "build/System.Reflection.TypeExtensions.dll",
+        "build/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/System.Runtime.Serialization.Primitives.dll",
+        "build/System.Text.Encoding.CodePages.dll",
+        "build/System.Threading.Tasks.Extensions.dll",
+        "build/System.Threading.Thread.dll",
+        "build/System.Threading.dll",
+        "build/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/cs/Microsoft.CodeAnalysis.resources.dll",
+        "build/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/de/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/de/Microsoft.CodeAnalysis.resources.dll",
+        "build/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/es/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/es/Microsoft.CodeAnalysis.resources.dll",
+        "build/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/fr/Microsoft.CodeAnalysis.resources.dll",
+        "build/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/it/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/it/Microsoft.CodeAnalysis.resources.dll",
+        "build/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/ja/Microsoft.CodeAnalysis.resources.dll",
+        "build/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/ko/Microsoft.CodeAnalysis.resources.dll",
+        "build/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/pl/Microsoft.CodeAnalysis.resources.dll",
+        "build/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "build/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/ru/Microsoft.CodeAnalysis.resources.dll",
+        "build/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/tr/Microsoft.CodeAnalysis.resources.dll",
+        "build/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "build/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "messagepack.msbuild.tasks.2.4.35.nupkg.sha512",
+        "messagepack.msbuild.tasks.nuspec"
+      ]
+    },
+    "MessagePack.UnityShims/2.4.35": {
+      "sha512": "9UpWVxfePfMiAL/tnGozkIIY332U3FARSlOm4tp/8RgOI3SvQGWRB6ReUbR8AUrUWtqJs0hVXkUP2zmPlxy+lA==",
+      "type": "package",
+      "path": "messagepack.unityshims/2.4.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/MessagePack.UnityShims.dll",
+        "lib/netstandard2.0/MessagePack.UnityShims.xml",
+        "messagepack.unityshims.2.4.35.nupkg.sha512",
+        "messagepack.unityshims.nuspec"
+      ]
+    },
+    "Microsoft.NET.StringTools/1.0.0": {
+      "sha512": "ZYVcoDM0LnSyT5nWoRGfShYdOecCw2sOXWwP6j1Z0u48Xq3+BVvZ+EiPCX9/8Gz439giW+O1H1kWF9Eb/w6rVg==",
+      "type": "package",
+      "path": "microsoft.net.stringtools/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "MSBuild-NuGet-Icon.png",
+        "lib/net35/Microsoft.NET.StringTools.net35.dll",
+        "lib/net35/Microsoft.NET.StringTools.net35.pdb",
+        "lib/net472/Microsoft.NET.StringTools.dll",
+        "lib/net472/Microsoft.NET.StringTools.pdb",
+        "lib/netstandard2.0/Microsoft.NET.StringTools.dll",
+        "lib/netstandard2.0/Microsoft.NET.StringTools.pdb",
+        "microsoft.net.stringtools.1.0.0.nupkg.sha512",
+        "microsoft.net.stringtools.nuspec",
+        "notices/THIRDPARTYNOTICES.txt"
+      ]
+    },
+    "System.Memory/4.5.4": {
+      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "type": "package",
+      "path": "system.memory/4.5.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.4.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "sha512": "ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "MagicOnion.Abstractions >= 4.5.2",
+      "MagicOnion.MSBuild.Tasks >= 4.5.2",
+      "MessagePack.MSBuild.Tasks >= 2.4.35",
+      "MessagePack.UnityShims >= 2.4.35"
+    ]
+  },
+  "packageFolders": {
+    "/Users/Tsubasa/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/FallingNumberTask-Shared.csproj",
+      "projectName": "FallingNumberTask-Shared",
+      "projectPath": "/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/FallingNumberTask-Shared.csproj",
+      "packagesPath": "/Users/Tsubasa/.nuget/packages/",
+      "outputPath": "/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/Tsubasa/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "MagicOnion.Abstractions": {
+            "target": "Package",
+            "version": "[4.5.2, )"
+          },
+          "MagicOnion.MSBuild.Tasks": {
+            "target": "Package",
+            "version": "[4.5.2, )"
+          },
+          "MessagePack.MSBuild.Tasks": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.4.35, )"
+          },
+          "MessagePack.UnityShims": {
+            "target": "Package",
+            "version": "[2.4.35, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
