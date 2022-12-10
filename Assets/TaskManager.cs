@@ -7,7 +7,7 @@ public class TaskManager : MonoBehaviour
 {
     public static string Name = "default";
     public static string SubjectNum = "0000";
-    public static float FallingSpeed = 0f;
+    public static float FallingSpeed = 1f;
     public static float NumberSpawnDelayTime = -1f;
     public static int SenarioNumber = 0;
     public static int Life = 3;
