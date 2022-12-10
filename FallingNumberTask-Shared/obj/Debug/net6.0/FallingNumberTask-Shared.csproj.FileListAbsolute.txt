@@ -1,0 +1,13 @@
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/bin/Debug/net6.0/FallingNumberTask-Shared.deps.json
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/bin/Debug/net6.0/FallingNumberTask-Shared.dll
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/bin/Debug/net6.0/FallingNumberTask-Shared.pdb
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/FallingNumberTask-Shared.csproj.AssemblyReference.cache
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/FallingNumberTask-Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/FallingNumberTask-Shared.AssemblyInfoInputs.cache
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/FallingNumberTask-Shared.AssemblyInfo.cs
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/FallingNumberTask-Shared.csproj.CoreCompileInputs.cache
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/FallingNumberTask-Shared.dll
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/refint/FallingNumberTask-Shared.dll
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/FallingNumberTask-Shared.pdb
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/ref/FallingNumberTask-Shared.dll
+/Users/Tsubasa/WorkSpace/gitRoot/falling-number-task/FallingNumberTask-Shared/obj/Debug/net6.0/mpc_generated.cs
