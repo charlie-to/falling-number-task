@@ -63,7 +63,7 @@ public class TaskManegerInTask : TaskManager
 
         if(senarioType == SenarioType.Measure)
         {
-            TaskManager.UserTypingSpeed_Max = taskData.GetUserTypingTimedByArea(7f);
+            TaskManager.UserTypingSpeed_Max = taskData.GetUserTypingTimedByArea(7f); //半分以下から開始
         }
         
     }

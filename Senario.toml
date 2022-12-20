@@ -1,5 +1,6 @@
 # Test Senario Ver.0.4
-# Last Change at Nov.3
+# Last Change at Dec.20
+# ! 本実験 ver.
 
 [meta]
 name = "test_senario3"
@@ -32,13 +33,13 @@ life = 3
 number_of_delete_on_decrease_life = 0
 range_of_delete_on_decrease_life = 6.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 4.0
+spawn_delay_time = 3.5
 change_at = 0.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 2.5
+spawn_delay_time = 2.3
 change_at = 90.0
 [[Senarios.spawn_delay_times]]
-spawn_delay_time = 1.6
+spawn_delay_time = 1.5
 change_at = 300.0
 
 # 3. 測定（はやめ）
